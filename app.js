@@ -33,3 +33,23 @@ function adicionarAmigo() {
         listaDeAmigos.innerHTML += '<li>'+ amigos[i] + '</li>';
     }
 }
+
+function sortearAmigo() {
+    // Validar que há amigos disponíveis: Antes de sortear, verificar se o array amigos não está vazio.
+    if(amigos.length > 0) { 
+        // Gerar um índice aleatório: Usar Math.random() e Math.floor() para selecionar um índice aleatório do array.        
+        let numeroSorteado = amigos.length;
+        while(numeroSorteado > amigos.length-1) {
+            numeroSorteado = Math.random() * 10;
+            numeroSorteado = Math.floor(numeroSorteado);
+           
+        }
+        console.log(numeroSorteado);
+        document.querySelector('#resultado').innerHTML = amigos[numeroSorteado];
+    }
+}
+
+// Obter o nome sorteado: Utilizar o índice aleatório para acessar o nome correspondente no array.
+
+
+// Mostrar o resultado: Atualizar o conteúdo do elemento de resultado usando document.getElementById() e innerHTML para exibir o amigo sorteado.
